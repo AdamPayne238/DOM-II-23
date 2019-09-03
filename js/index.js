@@ -109,9 +109,11 @@ let scale = 1;
 const el = document.querySelector('p');
 el.onwheel = zoom;
 
-// 10
+
 //Added form above footer
 const form = document.getElementById('form');
+
+// 10
 //Focus
 form.addEventListener('focus', (event) =>{
   event.target.style.background = 'hotpink'; }, true);
