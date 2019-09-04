@@ -15,7 +15,7 @@
 
 // 1
 //Click Navbar
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav a');
 console.log(navLinks);
 navLinks.forEach(function (navLink){
     navLink.addEventListener('click', event => {
@@ -23,17 +23,20 @@ navLinks.forEach(function (navLink){
         console.log(event)
         //turns atags red on click
         event.target.style.color = "red";
+        event.stopPropagation();
     })
 });
 
 // 2
 //Double Click (bubbling)
-const nav = document.querySelector('header nav');
+const nav = document.querySelector('.nav');
 nav.addEventListener('dblclick', e => {
-    console.log(e);
     //changes background color of a tags to red with bubbling
     e.target.style.backgroundColor = "blue";
+    e.preventDefault();
+    // e.stopPropagation();
 });
+
 
 // 3
 //MouseOver h1
