@@ -54,6 +54,7 @@ mouseOver.addEventListener("mouseover", (e) =>  {
 document.addEventListener('keydown', logKey);
 function logKey(e) {
 nav.textContent += ` ${e.code}`;
+e.stopPropagation();
 }
 
 // 5
@@ -139,6 +140,8 @@ window.addEventListener('popstate', (event) => {
   history.back(); // Logs "location: http://example.com/example.html, state: null
   history.go(2); 
 
+
+//Greensock Animation On Logo
 TweenMax.to(".logo-heading", 4, {
     fontSize:100,
     left:800,
